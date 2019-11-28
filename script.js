@@ -25,9 +25,11 @@ function displayResults(a) {
   $('.results').empty();
   for (let i = 0; i < a.message.length; i++) {
     $('.results').append(
-      `<img class="results-img" alt="dog picture" src="${a.message[1]}">`
+      `<img class="results-img" alt="dog picture" src="${a.message[i]}">`
     )
   }
+  //clear input for new input
+  $('#dogs').val('');
 };
 
 function watchSubmit() {
@@ -36,8 +38,6 @@ function watchSubmit() {
     const num = $("#dogs").val();
     getDogImages(num);
   });
-  //clear input for new input
-  $('#dogs').val('');
 }
 
 $(function() {
